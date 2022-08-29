@@ -27,18 +27,13 @@ const User = sequelize.define(
             allowNull: true,
         },
 
+        bio: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+
         profilePicture: {
             type: DataTypes.STRING,
-        },
-
-        phoneNumber: {
-            type: DataTypes.BIGINT,
-            allowNull: true,
-        },
-
-        address: {
-            type: DataTypes.STRING,
-            allowNull: true,
         },
     },
     {

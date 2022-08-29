@@ -16,7 +16,7 @@ const getFoods = asyncHandler(async (req, res) => {
     if (!page) {
         page = 1;
     }
-    const itemsPerPage = 1;
+    const itemsPerPage = 4;
     let foods;
     let foodCount;
 
@@ -219,7 +219,6 @@ const updateFood = asyncHandler(async (req, res) => {
             id: req.params.id,
             userId: req.user.id,
         },
-        include: Category,
     });
 
     if (!food) {
@@ -244,27 +243,6 @@ const updateFood = asyncHandler(async (req, res) => {
         food.price = Number(price);
     }
 
-    if (Array.isArray(category)) {
-        category.map((categ) =>
-            (async () => {
-                let cat = await Category.findOne({
-                    where: {
-                        id: categ,
-                    },
-                });
-                food.addCategory(cat);
-            })()
-        );
-    } else {
-        let cat = await Category.findOne({
-            where: {
-                id: category,
-            },
-        });
-        food.addCategory(cat);
-    }
-
-    console.log(req.files);
     if (req.files && req.files.length > 0) {
         const foodImages = await FoodImage.findAll({
             where: {

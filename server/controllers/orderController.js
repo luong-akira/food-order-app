@@ -1,6 +1,8 @@
 const asyncHandler = require("express-async-handler");
 const Food = require("../models/Food");
 const Order = require("../models/Order");
+const User = require("../models/User");
+const { Op } = require("sequelize");
 
 // @desc       Get all my orders
 // @route      GET /api/orders/myOrders
@@ -14,6 +16,49 @@ const getMyOrders = asyncHandler(async (req, res) => {
     });
 
     res.json(orders);
+});
+
+// @desc       Get order list
+// @route      GET /api/orders/orderList
+// @access     PRIVATE
+const getOrderList = asyncHandler(async (req, res) => {
+    const orders = await Order.findAll({
+        where: {},
+        include: [
+            {
+                model: Food,
+                where: {
+                    userId: req.user.id,
+                },
+            },
+        ],
+    });
+
+    res.json(orders);
+});
+
+// @desc       toggle is delivered
+// @route      POST /api/orders/:id
+// @access     PRIVATE
+const toggleIsDelivered = asyncHandler(async (req, res) => {
+    const order = await Order.findOne({
+        where: {
+            id: req.params.id,
+        },
+        include: [
+            {
+                model: Food,
+                where: {
+                    userId: req.user.id,
+                },
+            },
+        ],
+    });
+
+    order.isDelivered = true;
+    await order.save();
+
+    res.json(order);
 });
 
 // @desc       Create an order
@@ -90,7 +135,20 @@ const deleteOrder = asyncHandler(async (req, res) => {
 
     await order.destroy();
 
-    res.json(food);
+    const orders = await Order.findAll({
+        where: {
+            userId: req.user.id,
+        },
+        include: Food,
+    });
+
+    res.json(orders);
 });
 
-module.exports = { getMyOrders, createOrder, deleteOrder };
+module.exports = {
+    getMyOrders,
+    createOrder,
+    deleteOrder,
+    getOrderList,
+    toggleIsDelivered,
+};
