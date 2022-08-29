@@ -1,0 +1,26 @@
+.foodDetailsBasicInfo{
+    display: flex;
+}
+.foodDetailsImages{
+    flex:1;
+    margin: 5px;
+}
+
+.foodDetailsNameAndBuy{
+    flex:2;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.foodDetailsName{
+    flex:6;
+}
+.foodDetailsQuantity{
+    display: flex;
+    align-items: center;
+    flex:2
+}
+.foodDetailsBuyOptions{
+    flex:2
+}

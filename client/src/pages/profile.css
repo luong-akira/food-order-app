@@ -1,0 +1,35 @@
+p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color:gray
+}
+
+.profileWrapper{
+    display: flex;
+    margin: 20px;
+    justify-content: space-between;
+}
+.profileImageContainer{
+    flex:2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profilePicture{
+    width: 250px;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+}
+.profileInfoContainer{
+    flex:3
+}
+
+@media only screen and (max-width: 600px) {
+    .profileWrapper{
+        display: flex;
+        margin: 20px;
+        flex-direction: column;
+    }
+}
+
