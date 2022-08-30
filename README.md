@@ -1,0 +1,2 @@
+# food-order-app
+To run the program. Create an .env file in server directory. Then add these field and their values NODE_ENV, PORT, DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_HOST, PRIVATE_KEY. After that, in command line type cd client, npm run build. That is to create production build for react. Then, cd .. to go the root directory and cd server to go to server directory. And finnaly type node index to run the program. That's it.
