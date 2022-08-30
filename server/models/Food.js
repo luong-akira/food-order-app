@@ -2,7 +2,7 @@ const { Sequelize, DataTypes } = require("sequelize");
 const FoodImage = require("./FoodImage");
 const Category = require("./Category");
 const Order = require("./Order");
-const sequelize = new Sequelize("mysql://root:luong@localhost:3306/bookingapp");
+const { sequelize } = require("../config/db");
 
 const Food = sequelize.define(
     "food",

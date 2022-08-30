@@ -65,7 +65,7 @@ const toggleIsDelivered = asyncHandler(async (req, res) => {
 // @route      POST /api/orders
 // @access     PRIVATE
 const createOrder = asyncHandler(async (req, res) => {
-    const { quantity, foodId } = req.body;
+    const { quantity, foodId, address } = req.body;
 
     const food = await Food.findOne({
         where: {
@@ -81,6 +81,12 @@ const createOrder = asyncHandler(async (req, res) => {
         return res.status(400).json({ message: "Exceeds the stock" });
     }
 
+    if (!address || address == "") {
+        return res
+            .status(404)
+            .json({ message: "Please provide an address found" });
+    }
+
     if (food && food.userId == req.user.id) {
         return res.status(401).json({ message: "You own this food" });
     }
@@ -89,6 +95,7 @@ const createOrder = asyncHandler(async (req, res) => {
         quantity,
         userId: req.user.id,
         foodId,
+        address,
         total: quantity * food.price,
     });
 

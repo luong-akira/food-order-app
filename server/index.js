@@ -1,11 +1,14 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
-const { connectDB } = require("./config/db");
+const { sequelize } = require("./config/db");
 
 const PORT = process.env.PORT || 8000;
 
-connectDB();
+(async () => {
+    await sequelize.authenticate();
+    console.log("Connection has been establish successfully. ");
+})();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

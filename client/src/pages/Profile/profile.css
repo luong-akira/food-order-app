@@ -1,0 +1,44 @@
+p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color:gray
+}
+
+.Profile__Wrapper{
+    display: flex;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+.Profile__ImageContainer{
+    flex:2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Profile__ProfilePicture{
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border: 2px solid gray;
+    border-radius: 50%;
+}
+.Profile__InfoContainer{
+}
+
+.Profile__InfoPlusModification{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+    .Profile__Wrapper{
+        display: flex;
+        margin: 20px;
+        flex-direction: column;
+    }
+}
+

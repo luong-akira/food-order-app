@@ -1,0 +1,43 @@
+.MyCart__Wrapper{
+    display: flex;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.MyCart__Container{
+    flex:3
+}
+
+.MyCart_OrderWrapper{
+    margin: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.MyCart__AddressWrapper{
+    flex:1
+}
+
+.MyCart_AddAdressIcon{
+    color: red;
+    cursor: pointer;
+}
+
+.MyCart__AddressOption{
+    display: flex;
+    justify-items: center;
+}
+
+.MyCart__RadioButton{
+    
+}
+
+.MyCart__Address{
+    flex: 10;
+}
+
+.MyCart__DeleteAddressOption{
+    flex:1;
+    cursor: pointer;
+    color: red;
+}

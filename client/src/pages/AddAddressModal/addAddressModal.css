@@ -1,0 +1,35 @@
+.AddAddressModal_Wrapper{
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.AddAddressModal_Centered{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.AddAddressModal_Content{
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    padding:30px
+}
+.AddAddressModal_Form{
+    position: relative;
+}
+.AddAddressModal_CloseIcon{
+    position: absolute;
+    right: 0px;
+    top:0px;
+    color: red;
+    cursor: pointer;
+}

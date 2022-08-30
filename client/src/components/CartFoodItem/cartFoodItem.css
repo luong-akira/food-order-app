@@ -1,0 +1,45 @@
+.CartFoodItem__Wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:1px solid gray
+}
+
+
+
+.CartFoodItem__FoodName{
+    display: flex;
+    justify-content: center;
+}
+.CartFoodItem__FoodAmount{
+    display: flex;
+    justify-content: center;
+}
+.CartFoodItem__FoodPrice{
+    display: flex;
+    justify-content: center;
+}
+
+.CartFoodItem__FoodDetails{
+    flex:2
+}
+.CartFoodItem__FoodImageWrapper{
+    display: flex;
+    justify-content: center;
+    flex:2
+}
+.CartFoodItem__DeleteFoodWrapper{
+    display: flex;
+    justify-content: center;
+    flex:1;
+    color:red;
+    cursor: pointer;
+}
+.CartFoodItem__FoodImage{
+    width: 30%;
+    aspect-ratio: 3/4;
+    object-fit: contain;
+}
+.CartFoodItem__FoodAmount{
+    display: flex;
+}

@@ -1,0 +1,44 @@
+.FoodDetails_Container{
+    background-color: #fff;
+    margin-top: 30px;
+}
+
+.FoodDetails_BasicInfo{
+    display: flex;
+}
+.FoodDetails_Images{
+    flex:1;
+    margin: 5px;
+}
+
+.FoodDetails_NavLink{
+    color: black;
+}
+.FoodDetails_NavLink:hover{
+    text-decoration: none;
+
+}
+
+.FoodDetails__FoodImage{
+    aspect-ratio: 3/4;
+    object-fit: contain;
+}
+
+.FoodDetails_NameAndBuy{
+    flex:2;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.FoodDetails_Name{
+    flex:6;
+}
+.FoodDetails_Quantity{
+    display: flex;
+    align-items: center;
+    flex:2
+}
+.FoodDetails_BuyOptions{
+    flex:2
+}

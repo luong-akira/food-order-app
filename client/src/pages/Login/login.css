@@ -1,0 +1,11 @@
+.LoginForm{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+.Login__loginButton{
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 20px;
+}

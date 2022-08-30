@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require("sequelize");
-const sequelize = new Sequelize("mysql://root:luong@localhost:3306/bookingapp");
+const { sequelize } = require("../config/db");
 
 const Category = sequelize.define(
     "category",
@@ -17,7 +17,12 @@ const Category = sequelize.define(
 
 (async () => {
     await sequelize.sync();
-    console.log("Category");
+    // await Category.bulkCreate([
+    //     { name: "pizza" },
+    //     { name: "fried chicken" },
+    //     { name: "hamburger" },
+    //     { name: "other" },
+    // ]);
 })();
 
 module.exports = Category;

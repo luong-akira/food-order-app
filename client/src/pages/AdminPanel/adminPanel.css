@@ -1,0 +1,30 @@
+.AdminPanel_Heading{
+    text-align: center;
+}
+.AdminPanel_Wrapper{
+    padding: 30px 20px;
+}
+.AdminPanel_Nav{
+    background-color: aquamarine;
+    display: flex;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+}
+
+.AdminPanel_LinkWrapper{
+    flex:2;
+    display: flex;
+    border: 1px solid gray;
+    justify-content: center;
+}
+.AdminPanel_Link{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.AdminPanel_Link:hover{
+    text-decoration: none;
+}

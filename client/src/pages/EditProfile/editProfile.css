@@ -1,0 +1,20 @@
+.EditProfile_Form{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+.EditProfile_PreviewWrapper{
+    position: relative;
+}
+.EditProfile_TimesIcon{
+    color: red;
+    cursor: pointer;
+    position: absolute;
+}
+.EditProfile_Image{
+    width: 150px;
+    aspect-ratio: 3/4;
+    object-fit: contain;
+    margin: 10px 0;
+}

@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require("sequelize");
-const sequelize = new Sequelize("mysql://root:luong@localhost:3306/bookingapp");
+const { sequelize } = require("../config/db");
 
 const Order = sequelize.define(
     "order",
@@ -21,6 +21,10 @@ const Order = sequelize.define(
             type: DataTypes.FLOAT,
             allowNull: false,
         },
+        address: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
     },
     {
         timestamps: true,
@@ -28,7 +32,7 @@ const Order = sequelize.define(
 );
 
 (async () => {
-    await sequelize.sync();
+    await sequelize.sync({ alter: true });
     console.log("Order");
 })();
 

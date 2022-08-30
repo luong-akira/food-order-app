@@ -1,0 +1,9 @@
+.MyOrder__Wrapper{
+    margin-top: 20px;
+    padding: 30px 20px;
+    text-align: center;
+}
+.MyOrders__TrashIcon{
+    color: red;
+    cursor: pointer;
+}

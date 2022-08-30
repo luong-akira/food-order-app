@@ -1,0 +1,32 @@
+.Navbar_Nav{
+    background-color: #e3f2fd;
+}
+.Navbar_Dropdown{
+    display: flex;
+    align-items: center;
+}
+.Navbar_Username{
+    margin: 0px;
+}
+
+.Navbar_SignInAndRegister{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Navbar_SignInIcon{
+    color: black;
+    margin-right: 30px;
+}
+.Navbar_RegisterIcon{
+    color: black;
+    margin-right: 5px;
+}
+
+.Navbar_CartIcon{
+    color:black
+}
+
+.Navbar_CartIcon:hover{
+    text-decoration: none;
+}

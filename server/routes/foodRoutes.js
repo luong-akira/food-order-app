@@ -5,6 +5,7 @@ const multer = require("multer");
 const {
     getFoods,
     getFood,
+    getUserFoods,
     getLoggedInUserFoods,
     createFood,
     updateFood,
@@ -33,6 +34,7 @@ const upload = multer({ storage: storage });
 
 router.get("/", getFoods);
 router.get("/me", protect, getLoggedInUserFoods);
+router.get("/user/:id", getUserFoods);
 router.get("/:id", getFood);
 router.post("/", upload.array("foods", 5), protect, createFood);
 router.post("/createCategory", createCategory);

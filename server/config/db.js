@@ -10,13 +10,4 @@ const sequelize = new Sequelize(
     }
 );
 
-const connectDB = async () => {
-    try {
-        await sequelize.authenticate();
-        console.log("Connection has been establish successfully. ");
-    } catch (error) {
-        console.log("Unable connect to the database");
-    }
-};
-
-module.exports = { sequelize, connectDB };
+module.exports = { sequelize };

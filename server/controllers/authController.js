@@ -51,6 +51,7 @@ const register = asyncHandler(async (req, res) => {
             id: user.id,
             username: user.username,
             email: user.email,
+            profilePicture: user.profilePicture,
             token,
         });
     }
@@ -84,6 +85,7 @@ const login = asyncHandler(async (req, res) => {
             id: user.id,
             username: user.username,
             email: user.email,
+            profilePicture: user.profilePicture,
             token,
         });
     }

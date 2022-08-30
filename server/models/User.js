@@ -1,6 +1,7 @@
 const { Sequelize, DataTypes } = require("sequelize");
+const { sequelize } = require("../config/db");
 const Food = require("./Food");
-const sequelize = new Sequelize("mysql://root:luong@localhost:3306/bookingapp");
+const Address = require("./Address");
 const Order = require("./Order");
 
 const User = sequelize.define(
@@ -28,7 +29,7 @@ const User = sequelize.define(
         },
 
         bio: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: true,
         },
 
@@ -46,6 +47,9 @@ Food.belongsTo(User);
 
 User.hasMany(Order);
 Order.belongsTo(User);
+
+User.hasMany(Address);
+Address.belongsTo(User);
 
 (async () => {
     await sequelize.sync();

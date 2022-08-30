@@ -158,6 +158,31 @@ const getLoggedInUserFoods = asyncHandler(async (req, res) => {
     res.json(foods);
 });
 
+// @desc       Get user foods
+// @route      GET /api/foods/user/:id
+// @access     PUBLIC
+const getUserFoods = asyncHandler(async (req, res) => {
+    const foods = await Food.findAll({
+        where: {
+            userId: req.params.id,
+        },
+        include: [
+            {
+                model: FoodImage,
+            },
+            {
+                model: Category,
+            },
+        ],
+    });
+
+    if (!foods) {
+        return res.status(404).json("This user does not exist");
+    }
+
+    res.json(foods);
+});
+
 // @desc       create food
 // @route      POST /api/food/
 // @access     PRIVATE
@@ -278,7 +303,7 @@ const updateFood = asyncHandler(async (req, res) => {
 });
 
 // @desc       delete food by id
-// @route      DELETE /api/food/:id
+// @route      DELETE /api/foods/:id
 // @access     PRIVATE
 const deleteFood = asyncHandler(async (req, res) => {
     const food = await Food.findOne({
@@ -314,6 +339,7 @@ const deleteFood = asyncHandler(async (req, res) => {
 // @route      GET /api/foods
 // @access     PUBLIC
 const createCategory = asyncHandler(async (req, res) => {
+    console.log("hello");
     const category = await Category.create({
         name: req.body.name,
     });
@@ -324,6 +350,7 @@ const createCategory = asyncHandler(async (req, res) => {
 module.exports = {
     getFoods,
     getFood,
+    getUserFoods,
     getLoggedInUserFoods,
     createFood,
     updateFood,
